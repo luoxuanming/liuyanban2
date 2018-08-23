@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<head>
+<script>
+window.onload=function(){
+	var tijiao=document.getElementById("submit");
+	var clear=document.getElementById("clear");
+	function setCookie(cname,cvalue,exdays){
+	    var d = new Date();
+	    d.setTime(d.getTime()+(exdays*24*60*60*1000));
+	    var expires = "expires="+d.toGMTString();
+	    document.cookie = cname+"="+cvalue+"; "+expires;
+	}
+	tijiao.onclick=function(){
+		var username=document.getElementById("username");
+		var password=document.getElementById("password");
+		setCookie("username",username.value,30);
+		setCookie("password",password.value,30);
+	}
+	clear.onclick=function(){
+		var username=document.getElementById("username");
+		var password=document.getElementById("password");
+		setCookie("username",username.value,-30);
+		setCookie("password",password.value,-30);
+	}
+	console.log(new Date().getFullYear());
+	console.log(new Date().getMonth()+1);
+	console.log(new Date().getDate())
+}
+</script>
+</head>
+	
+<body>
+	用户名:<input type="text" name="" id="username" value=""/>
+	密码:<input type="password" name="" id="password" value="" />
+	<input type="button" name="submit" id="submit" value="提交" />
+	<input type="button" name="clear" id="clear" value="清除" />
+</body>	
+</html>

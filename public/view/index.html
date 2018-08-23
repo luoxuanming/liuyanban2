@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>留言板</title>
+
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+		<!--导航条-->
+		<nav class="navbar nav-comment">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+     	 			</button>
+					<a class="navbar-brand" href="#">LOGO</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">首页 </a>
+						</li>
+						<li>
+							<a href="#">留言区</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li id="login_groups">
+							<a data-toggle="modal" data-target="#exampleModal">登录/注册</a>
+						</li>
+						<li class="dropdown" id="login_list" style="display: none;">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src=""/ class="nav_avator" id="nav_avator"></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#" id="myname">我的关注</a>
+								</li>
+								<li>
+									<a id="change_ava">
+										更换头像
+									</a>
+								</li>
+								<li>
+									<a href="#">lulu</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#" id="logout">退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!--留言板-->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 comment">
+					<p class="bg-primary text-primary">留言板</p>
+					{{#each(array)}}
+					<div class="media" tabindex="{{this.id}}">
+						<div class="media-left">
+						    <a href="#">
+						        <img class="media-object" src="{{this.Avatorurl}}" alt="avator">
+						        <span class="username">{{this.Username}}</span>
+						    </a>
+					    </div>
+					    <div class="media-body">
+					    	<h4 class="media-heading">
+					    		<span class="time">发表日期：{{this.publishtime}}</span>
+					    		<span class="pull-right count">{{this.xindex+1}}楼</span></h4>
+						    <div class="content">{{this.content}}
+						    </div>
+						    <div class="interaction">
+						    	
+						    	<span><a href="javascript:;" class=" glyphicon glyphicon-heart like">{{this.like}}</a></span>
+						    	<span><a href="javascript:;" class=" glyphicon glyphicon-thumbs-down unlike">{{this.unlike}}</a></span>
+						    	<span><a href="javascript:;" class=" glyphicon glyphicon-thumbs-up support">{{this.support}}</a></span>
+						    	<span><a href="javascript:;" class="res">评论</a></span>
+						    	<span class="huifu"><a href="./update.html" >回复</a>(<b>{{this.response.length}}</b>)</span>
+						    </div>
+					    </div>
+					</div>
+					{{/each}}
+					<div class="addwords">
+						<p class="bg-primary text-primary">我要留言</p>
+						<textarea class="area" id="area"></textarea>
+						<a href="javascript:;" class="btn btn-primary" id="publish">发表</a><span class="text-warning" id="msg2"></span>
+					</div>
+				</div>
+				<div class="col-lg-3 hidden-md hidden-sm hidden-xs login">
+					<div class="panel panel-default">
+					  	<div class="panel-heading">待开发模块</div>
+					  	<div class="panel-body">
+				    		<p><a href="javascript:;">我的留言</a></p>
+				    		<p><a href="javascript:;">我的粉丝</a></p>
+				    		<p><a href="javascript:;">我的关注</a></p>
+				    		<p><a href="javascript:;">随便逛逛</a></p>
+				  		</div>
+					</div>
+				
+					<div class="panel hidden-md hidden-sm hidden-xs panel-default">
+						<div class="panel-heading">
+						    <h3 class="panel-title">广告招租</h3>
+						</div>
+						<div class="panel-body">
+						    <a href="javascript:;">啊哈哈哈</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--版权信息-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<p>版权所有&copy; blingbling </p>
+				</div>
+			</div>
+		</footer>
+		
+		<!--登录注册-->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  			<div class="modal-dialog" role="document">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        	<h4 class="modal-title" id="exampleModalLabel">登录/注册</h4>
+			        </div>
+		        <div class="modal-body">
+			        <form>
+				        <div class="form-group">
+				            <label for="username" class="control-label">用户名:</label>
+				            <input type="text" class="form-control" id="username">
+				        </div>
+				        <p class="text-danger" id="msg1"></p>
+				        <div class="form-group">
+				            <label for="password" class="control-label">密码:</label>
+				            <input type="password" class="form-control" id="password">
+				        </div>
+			        </form>
+		        </div>
+		        <div class="modal-footer">
+		        	<button type="button" id="register_btn" class="btn btn-primary">注册</button>
+		        	<button type="button" id="login_btn" class="btn btn-primary">登录</button>
+		        </div>
+		    </div>
+        </div>
+    </div>
+		
+		<!--更换头像-->
+		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="Cavator">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="gridSystemModalLabel">更换头像</h4>
+		      </div>
+		      <form action="http://127.0.0.1:8080/api/photo" method="post" enctype="multipart/form-data" target="nm_frame">
+		      	<div class="modal-body">
+		        <div class="row">
+		          <input type="file" accept="image/jpeg,image/png,image/gif" name="photo" id="photo" value="" />
+		          	<img id="preview" style="border-width:0px; width: 128px;height: 128px;"/>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary" data-dismiss="modal">取消</button>
+		        <button type="submit" class="btn btn-primary" id="upload">确定</button>
+		      </div>
+		      </form>
+		      <iframe id="" name="nm_frame" style="display: none;"></iframe>
+		    </div>
+	  </div>
+	</div>
+	
+		<!--留言框-->
+		<div class="modal fade" id="liuyan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">评论区</h4>
+		      </div>
+		      <div class="modal-body">
+		        <textarea name="" id="reswords" style="width: 100%;height: 200px; resize:none;outline: none;"></textarea>
+		      </div>
+		      <div class="modal-footer">
+		      	<span style="margin-right: 10px; display: none;" class="text-danger" id="msg3">内容不能为空</span>
+		        <button type="button" class="btn btn-primary" id="response">评论</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	    
+	    <!--提示框-->
+	    <div class="modal fade" id="prompt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">不登录的后果</h4>
+		      </div>
+		      <div class="modal-body">
+		       <p>今时今日你这种不登录就回复的态度是不行的！</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" id="promp_login_btn">登录</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,195 @@
+.navbar{
+	border-radius: 0;
+}
+.nav-comment {
+  background-color: #fff;
+  border-color: transparent;
+}
+.nav-comment .navbar-brand {
+  color: #777;
+}
+.nav-comment .navbar-brand:hover,
+.nav-comment .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.nav-comment .navbar-text {
+  color: #777;
+}
+.nav-comment .navbar-nav > li > a {
+  color: #777;
+  border-bottom: 3px solid transparent;
+}
+.nav-comment .navbar-nav > li > a:hover,
+.nav-comment .navbar-nav > li > a:focus {
+  color: #0086f9;
+  background-color: transparent;
+  border-color:#0086f9;
+}
+.nav-comment .navbar-nav > .active > a,
+.nav-comment .navbar-nav > .active > a:hover,
+.nav-comment .navbar-nav > .active > a:focus {
+  color: #0086f9;
+  background-color: transparent;
+  border-color:#0086f9;
+}
+.nav-comment .navbar-nav > .disabled > a,
+.nav-comment .navbar-nav > .disabled > a:hover,
+.nav-comment .navbar-nav > .disabled > a:focus {
+  color: #0086f9;
+  background-color: transparent;
+}
+.nav-comment .navbar-toggle {
+  border-color: #ddd;
+}
+.nav-comment .navbar-toggle:hover,
+.nav-comment .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.nav-comment .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.nav-comment .navbar-collapse,
+.nav-comment .navbar-form {
+  border-color: #e7e7e7;
+}
+.nav-comment .navbar-nav > .open > a,
+.nav-comment .navbar-nav > .open > a:hover,
+.nav-comment .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .nav-comment .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .nav-comment .navbar-nav .open .dropdown-menu > li > a:hover,
+  .nav-comment .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .nav-comment .navbar-nav .open .dropdown-menu > .active > a,
+  .nav-comment .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .nav-comment .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: transparent;
+  }
+  .nav-comment .navbar-nav .open .dropdown-menu > .disabled > a,
+  .nav-comment .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .nav-comment .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.nav-comment .navbar-link {
+  color: #777;
+}
+.nav-comment .navbar-link:hover {
+  color: #333;
+}
+.nav-comment .btn-link {
+  color: #777;
+}
+.nav-comment .btn-link:hover,
+.nav-comment .btn-link:focus {
+  color: #333;
+}
+.nav-comment .btn-link[disabled]:hover,
+fieldset[disabled] .nav-comment .btn-link:hover,
+.nav-comment .btn-link[disabled]:focus,
+fieldset[disabled] .nav-comment .btn-link:focus {
+  color: #ccc;
+}
+.nav-comment .navbar-nav > .open > a, .nav-comment .navbar-nav > .open > a:hover, .nav-comment .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #fff;
+}
+.nav_avator{
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+}
+
+.bg-primary{
+	padding:10px 0;
+	padding-left: 15px;
+}
+
+
+.media{
+	border:1px solid #d8d8d8;
+	padding:10px;
+	border-radius: 3px;
+}
+.media-object{
+	width: 64px;
+	height: 64px;
+}
+.media-heading{
+	overflow: hidden;
+}
+.media .username{
+	display: block;
+	margin-top:5px;
+	text-align: center;
+}
+.count{
+	font-size: 14px;
+	padding-right:10px;
+	font-weight: normal;
+}
+.interaction span{
+	text-decoration: none;
+	float: right;
+	padding:5px;
+	margin:0 10px;
+}
+.interaction span a{
+	display: inline-block;
+	margin-right: 5px;
+}
+.media-heading .time {
+	padding-top:5px;
+	font-size: 14px;
+	font-weight: lighter;
+	padding:0;
+	margin:0;
+	margin-top:5px;
+}
+
+.modal-body .alert{
+	display: none;
+	padding:10px 5px;
+}
+
+/*留言板*/
+.addwords{
+	margin-top:100px;
+}
+.addwords .area{
+	display: block;
+	width: 100%;
+	height: 250px;
+	border:1px solid #d8d8d8;
+	margin-bottom: 10px;
+	resize: none;
+	outline: none;
+	padding:10px;
+}
+
+#msg2{
+	margin-left:10px;
+}
+
+/*版权信息*/
+footer{
+	background: #000;
+	color:#fff;
+	margin-top:100px;
+	height: 100px;
+	padding-top:40px;
+}
+
+.huifu b{
+	font-weight: normal;
+}
